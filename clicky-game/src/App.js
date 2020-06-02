@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import FriendCard from "./components/Card";
-import Nav from "./components/Nav";
-import Wrapper from "./components/Wrapper";
-import Title from "./components/Title";
+import Card from "./components/Card/Card";
+import Nav from "./components/Nav/Nav";
+import Wrapper from "./components/Wrapper/Wrapper";
+import Title from "./components/Title/Title";
 import Container from "./Container";
 import Row from "./Row";
 import Column from "./Column";
@@ -62,7 +62,7 @@ class App extends Component {
   };
 
   handleShuffle = () => {
-    let shuffledCards = randomCards(cards);
+    let shuffledCards = randomCard(cards);
     this.setState({ cards: shuffledCards });
   };
 
@@ -84,7 +84,7 @@ class App extends Component {
           <Row>
             {this.state.cards.map((card) => (
               <Column size="md-3 sm-6">
-                <FriendCard
+                <Card
                   key={card.id}
                   handleClick={this.handleClick}
                   handleIncrement={this.handleIncrement}
